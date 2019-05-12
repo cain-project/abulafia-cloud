@@ -6,10 +6,6 @@
 		exit(); 
 	}
 
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once $class_name.".obj.inc";
-	}
-	
 	$my_tabellahtml= unserialize($_SESSION['my_tabellahtml']);//deserializzazione 
 	$tipologia=$_GET['tipologia'];
 	$filename=$_GET['filename'];

@@ -29,3 +29,14 @@ public/images/barcode/*
 public/certificati/*
 !public/certificati/.gitkeep
 /public/images/intestazione_certificato.png
+
+# IDEs
+.idea
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+
+/vendor/

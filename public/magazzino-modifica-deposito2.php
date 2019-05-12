@@ -8,7 +8,7 @@
 	}
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'class/Magazzino.obj.inc';
 	$m = new Magazzino();
 	$id = $_GET['id'];

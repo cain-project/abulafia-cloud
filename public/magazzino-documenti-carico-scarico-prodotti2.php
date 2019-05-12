@@ -8,7 +8,7 @@
 	}
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'class/Magazzino.obj.inc';
 	include 'class/Calendario.obj.inc';
 	$m = new Magazzino();

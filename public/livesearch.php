@@ -6,10 +6,7 @@ if ($_SESSION['auth'] < 1 ) {
 		exit(); 
 	}
 
-include '../db-connessione-include.php';
-function __autoload ($class_name) //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-{ require_once "class/" . $class_name.".obj.inc";
-}
+include '../core.php';
 $q=$_GET['q'];
 
 $id=$_GET['id'];

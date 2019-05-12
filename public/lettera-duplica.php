@@ -7,11 +7,7 @@
 		exit(); 
 	}
 
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	
 	$lett = new Lettera();
 	$id = $_GET['id'];

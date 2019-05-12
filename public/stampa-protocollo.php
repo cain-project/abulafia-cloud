@@ -7,15 +7,12 @@
 			exit(); 
 		}
 
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
 	$my_log = new Log();
 	$lettera = new Lettera();
 	$calendario = new Calendario();
 	$id = $_GET['id'];
 	$anno = $_GET['anno'];
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'maledetti-apici-centro-include.php';
 	require('lib/fpdf/fpdf.php');
 		

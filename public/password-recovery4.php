@@ -10,7 +10,7 @@
 	$idutente = $_POST['idutente']; // password inserita nella form della pagina iniziale
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	include 'maledetti-apici-centro-include.php'; //ATTIVA O DISATTIVA IL MAGIC QUOTE PER GLI APICI
 
 	try {

@@ -8,7 +8,7 @@
 	}
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'class/Prodotto.obj.inc';
 	$p = new Prodotto();
 	$descrizione = $_POST['descrizione'];

@@ -7,13 +7,9 @@
 		exit(); 
 	}
 
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'maledetti-apici-centro-include.php'; //ATTIVA O DISATTIVA IL MAGIC QUOTE PER GLI APICI
-	
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-	
+
 	$q=$_GET['q'];
 	$idlettera=$_GET['idlettera'];
 	$conoscenza = $_GET['conoscenza'];

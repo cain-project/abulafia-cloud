@@ -6,12 +6,7 @@
 		header("Location: index.php?s=1"); //termina lo script se non si è loggati con valore almeno 1
 		exit(); 
 	}
-	
-	function __autoload ($class_name) //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-	{ 
-		require_once "class/" . $class_name.".obj.inc";
-	}
-	
+
 	$my_log = new Log(); //istanzio la classe Log()
 
 	$est=$_GET['est']; // acquisisce l'estensione del file da passare in download, da aggiungere al nome del file rinominato in prot-(num).est

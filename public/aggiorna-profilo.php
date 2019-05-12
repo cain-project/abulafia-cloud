@@ -8,7 +8,7 @@
 	}
 
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'maledetti-apici-centro-include.php';
 	include 'class/Anagrafica.obj.inc';
 	include 'class/Calendario.obj.inc';
