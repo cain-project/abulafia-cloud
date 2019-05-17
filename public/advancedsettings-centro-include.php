@@ -75,7 +75,7 @@
 			$res_count=$risultati[0];
 			
 			$contalettere= $res_count[0] +1 ;
-			//fine funzione per determinare se la tabella "lettere" è vuota. 
+			//fine funzione per determinare se la tabella "lettere" ï¿½ vuota. 
 			?>
 			
 			<form name="modifica" method="post" class="form-group">
@@ -191,11 +191,15 @@
 							<?php if(!$admin) { echo 'disabled'; } ?> > </td>
 						</tr>
 						<tr>
-							<td><label>Ambulatorio </label></td><td><input type="checkbox" name="ambulatorio" <?php if($_SESSION['mod_ambulatorio']) echo 'checked'; ?>
-							<?php if(!$admin) { echo 'disabled'; } ?> > </td>
-						</tr>
+                            <td><label>Ambulatorio </label></td><td><input type="checkbox" name="ambulatorio" <?php if($_SESSION['mod_ambulatorio']) echo 'checked'; ?>
+                                    <?php if(!$admin) { echo 'disabled'; } ?> > </td>
+                        </tr>
+                        <tr>
+                            <td><label>Autoparco </label></td><td><input type="checkbox" name="autoparco" <?php if($_SESSION['mod_autoparco']) echo 'checked'; ?>
+                                    <?php if(!$admin) { echo 'disabled'; } ?> > </td>
+                        </tr>
 						<tr>
-							<td><label>Contabilità </label></td><td><input type="checkbox" name="contabilita" <?php if($_SESSION['mod_contabilita']) echo 'checked'; ?>
+							<td><label>Contabilita' </label></td><td><input type="checkbox" name="contabilita" <?php if($_SESSION['mod_contabilita']) echo 'checked'; ?>
 							<?php if(!$admin) { echo 'disabled'; } ?> > </td>
 						</tr>
 					</table>				
@@ -226,49 +230,49 @@
 	
 	if ((version == "") || (version == "undefined")) 
 	{
-           alert("Il campo Versione è obbligatorio");
+           alert("Il campo Versione ï¿½ obbligatorio");
            document.modifica.versione.focus();
            return false;
       }
 	if ((nomeapplicativo == "") || (nomeapplicativo == "undefined")) 
 	{
-           alert("Il campo Nome dell'Applicativo è obbligatorio");
+           alert("Il campo Nome dell'Applicativo ï¿½ obbligatorio");
            document.modifica.nomeapplicativo.focus();
            return false;
       }
 	if ((email == "") || (email == "undefined")) 
 	{
-           alert("Il campo EMAIL è obbligatorio");
+           alert("Il campo EMAIL ï¿½ obbligatorio");
            document.modifica.email.focus();
            return false;
       }
 	if ((paginaprincipale == "") || (paginaprincipale == "undefined")) 
 	{
-           alert("Il campo Pagina Principale è obbligatorio");
+           alert("Il campo Pagina Principale ï¿½ obbligatorio");
            document.modifica.paginaprincipale.focus();
            return false;
       }
 	if ((protocollomaxfilesize == "") || (protocollomaxfilesize == "undefined")) 
 	{
-           alert("Il campo Max File Size (protocollo) è obbligatorio");
+           alert("Il campo Max File Size (protocollo) ï¿½ obbligatorio");
            document.modifica.protocollomaxfilesize.focus();
            return false;
       }
 	if ((fotomaxfilesize == "") || (fotomaxfilesize == "undefined")) 
 	{
-           alert("Il campo Max File Size (foto) è obbligatorio");
+           alert("Il campo Max File Size (foto) ï¿½ obbligatorio");
            document.modifica.fotomaxfilesize.focus();
            return false;
       }
 	if ((annoprotocollo == "") || (annoprotocollo == "undefined")) 
 	{
-           alert("Il campo Anno Corrente per il Protocollo è obbligatorio");
+           alert("Il campo Anno Corrente per il Protocollo ï¿½ obbligatorio");
            document.modifica.annoprotocollo.focus();
            return false;
       }
 	if ((headerdescription == "") || (headerdescription == "undefined")) 
 	{
-           alert("Il campo Descrizione Breve è obbligatorio");
+           alert("Il campo Descrizione Breve ï¿½ obbligatorio");
            document.modifica.versione.focus();
            return false;
       }

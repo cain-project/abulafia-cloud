@@ -226,6 +226,7 @@
 	$_SESSION['mod_contabilita'] = $settings4['contabilita'];
 	$_SESSION['mod_documenti'] = $settings4['documenti'];
 	$_SESSION['mod_ambulatorio'] = $settings4['ambulatorio'];
+    $_SESSION['mod_autoparco'] = $settings4['autoparco'];
 	$_SESSION['signaturepath'] = $settings4['signaturepath'];
 	
 	//caricamento settaggi email

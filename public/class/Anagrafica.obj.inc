@@ -201,6 +201,16 @@ class Anagrafica {
 			return false;
 	}
 
+	public function isAutoparco($id) {
+		global $connessione;
+		$query = $connessione->query("SELECT autoparco FROM users WHERE idanagrafica = $id");
+		$autoparco = $query->fetch();
+		if ($autoparco[0] == 1)
+			return true;
+		else
+			return false;
+	}
+
 	public function isContabilita($id) {
 		global $connessione;
 		$query = $connessione->query("SELECT contabilita FROM users WHERE idanagrafica = $id");

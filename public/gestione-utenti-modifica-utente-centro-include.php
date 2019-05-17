@@ -107,6 +107,11 @@
 						<input type="checkbox" name="ambulatorio" value="1" <?php if($row3['ambulatorio'] == 1) echo 'checked'; ?>/></center>
 					</div>
 
+                    <div class="col-sm-1">
+                        <center><label>Autoparco:</label><br>
+                            <input type="checkbox" name="autoparco" value="1" <?php if($row3['autoparco'] == 1) echo 'checked'; ?>/></center>
+                    </div>
+
 					<div class="col-sm-1">
 						<center><label>Contabilit&agrave:</label><br>
 						<input type="checkbox" name="contabilita" value="1" <?php if($row3['contabilita'] == 1) echo 'checked'; ?>/></center>
@@ -138,7 +143,7 @@
 	var nuovapassword2 = document.modifica.nuovapassword2.value;
       
 	if ((nomeutente == "") || (nomeutente == "undefined")) {
-		alert("Il campo 'Username' è obbligatorio");
+		alert("Il campo 'Username' ï¿½ obbligatorio");
 		document.modifica.nomeutente.focus();
 		return false;
 	}
