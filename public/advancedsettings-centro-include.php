@@ -75,7 +75,7 @@
 			$res_count=$risultati[0];
 			
 			$contalettere= $res_count[0] +1 ;
-			//fine funzione per determinare se la tabella "lettere" � vuota. 
+			//fine funzione per determinare se la tabella "lettere" è vuota.
 			?>
 			
 			<form name="modifica" method="post" class="form-group">
@@ -230,49 +230,49 @@
 	
 	if ((version == "") || (version == "undefined")) 
 	{
-           alert("Il campo Versione � obbligatorio");
+           alert("Il campo Versione è obbligatorio");
            document.modifica.versione.focus();
            return false;
       }
 	if ((nomeapplicativo == "") || (nomeapplicativo == "undefined")) 
 	{
-           alert("Il campo Nome dell'Applicativo � obbligatorio");
+           alert("Il campo Nome dell'Applicativo è obbligatorio");
            document.modifica.nomeapplicativo.focus();
            return false;
       }
 	if ((email == "") || (email == "undefined")) 
 	{
-           alert("Il campo EMAIL � obbligatorio");
+           alert("Il campo EMAIL è obbligatorio");
            document.modifica.email.focus();
            return false;
       }
 	if ((paginaprincipale == "") || (paginaprincipale == "undefined")) 
 	{
-           alert("Il campo Pagina Principale � obbligatorio");
+           alert("Il campo Pagina Principale è obbligatorio");
            document.modifica.paginaprincipale.focus();
            return false;
       }
 	if ((protocollomaxfilesize == "") || (protocollomaxfilesize == "undefined")) 
 	{
-           alert("Il campo Max File Size (protocollo) � obbligatorio");
+           alert("Il campo Max File Size (protocollo) è obbligatorio");
            document.modifica.protocollomaxfilesize.focus();
            return false;
       }
 	if ((fotomaxfilesize == "") || (fotomaxfilesize == "undefined")) 
 	{
-           alert("Il campo Max File Size (foto) � obbligatorio");
+           alert("Il campo Max File Size (foto) è obbligatorio");
            document.modifica.fotomaxfilesize.focus();
            return false;
       }
 	if ((annoprotocollo == "") || (annoprotocollo == "undefined")) 
 	{
-           alert("Il campo Anno Corrente per il Protocollo � obbligatorio");
+           alert("Il campo Anno Corrente per il Protocollo è obbligatorio");
            document.modifica.annoprotocollo.focus();
            return false;
       }
 	if ((headerdescription == "") || (headerdescription == "undefined")) 
 	{
-           alert("Il campo Descrizione Breve � obbligatorio");
+           alert("Il campo Descrizione Breve è obbligatorio");
            document.modifica.versione.focus();
            return false;
       }

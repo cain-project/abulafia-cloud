@@ -405,6 +405,28 @@ class Anagrafica {
 		return $nome;
 	}
 
+	public function insertVeicolo($targa, $tipologia, $selettiva) {
+
+		global $connessione;
+
+		try {
+			$connessione->beginTransaction();
+			$query = $connessione->prepare("INSERT INTO aut_veicoli VALUES ('', :targa, :tipologa, :selettiva)");
+			$query->bindParam(':targa', $targa);
+			$query->bindParam(':tipologia', $tipologia);
+			$query->bindParam(':selettiva', $selettiva);
+			$query->execute();
+			$connessione->commit();
+			$q3 = true;
+		}
+		catch (PDOException $errorePDO) {
+			echo "Errore: " . $errorePDO->getMessage();
+			$connessione->rollBack();
+			$q3 = false;
+		}
+		return $q3;
+	}
+
 }
 
 ?>
