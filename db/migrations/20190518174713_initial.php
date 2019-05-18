@@ -570,25 +570,6 @@ class Initial extends AbstractMigration
               PRIMARY KEY (`idanagrafica`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
             
-            
-            INSERT IGNORE INTO `mailsettings` (`username`, `password`, `smtp`, `porta`, `protocollo`, `replyto`, `headermail`, `footermail`) VALUES
-            ('', '', '', 0, '', '', '', '');
-            
-            
-            INSERT IGNORE INTO `anagrafica` (`idanagrafica`, `nome`, `cognome`, `residenzastato`, `residenzaprovincia`, `residenzacitta`, `residenzavia`, `residenzacivico`, `residenzacap`, `nascitadata`, `nascitastato`, `nascitaprovincia`, `nascitacomune`, `urlfoto`, `grupposanguigno`, `codicefiscale`, `tipologia`, `fuoriuso`) VALUES
-            (0, 'Utente', 'Utente', 'italia', '', '', '', '', '', '0000-00-00', 'italia', '', '', '', '', '', 'persona', 0);
-            
-            
-            INSERT IGNORE INTO `users` (`idanagrafica`, `auth`, `loginname`, `password`, `mainemail`, `terminiecondizioni`, `admin`, `anagrafica`, `protocollo`, `documenti`, `lettere`, `magazzino`, `ambulatorio`, `contabilita`, `updateprofile`) VALUES
-            (0, 100, 'utente', '3ce98305181b1bac59d024a49b0ffd73', '', 0, 1, 1, 1, 1, 1, 1, 1, 0, 0);
-            
-            
-            INSERT IGNORE INTO `usersettings` (`idanagrafica`, `risultatiperpagina`, `splash`, `secondocoloretabellarisultati`, `primocoloretabellarisultati`, `larghezzatabellarisultati`, `notificains`, `notificamod`) VALUES
-            (0, 50, '', '#DEFEB4', '#FFFFCC', '100%', 0, 0);
-            
-            
-            INSERT IGNORE INTO `defaultsettings` (`annoprotocollo`, `protocollomaxfilesize`, `fotomaxfilesize`, `nomeapplicativo`, `email`, `version`, `paginaprincipale`, `titolopagina`, `keywords`, `description`, `headerdescription`, `sede`, `denominazione`, `vertice`, `inizio`, `quota`, `anagrafica`, `protocollo`, `documenti`, `lettere`, `magazzino`, `ambulatorio`, `contabilita`, `signaturepath`) VALUES
-            (2019, 20000000, 5000000, 'Abulafia Web', 'info@abulafiaweb.it', '12.4', 'http://demo.abulafiaweb.it', 'Abulafia Web - Smart Solutions', 'abulafia web protocollo informatico gestione documentale magazzino ambulatorio', 'Gestionale per Enti e PMI', 'Smart Solutions', '', '', 'Presidente', '2019/03/18', 10000, 1, 1, 1, 1, 1, 1, 0, '');
         ");
     }
 }
