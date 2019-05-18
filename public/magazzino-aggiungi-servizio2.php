@@ -8,7 +8,7 @@
 	}
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'class/Servizio.obj.inc';
 	$p = new Servizio();
 	$codice = $_POST['codice'];

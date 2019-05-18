@@ -9,7 +9,7 @@
     }
 
     include 'class/Log.obj.inc';
-    include '../db-connessione-include.php';
+    include '../core.php';
 
     $anno = $_POST['anno'];
     $inizio = $_POST['inizio'];

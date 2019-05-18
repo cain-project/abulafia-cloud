@@ -5,13 +5,10 @@
 		exit(); 
 	}
 	
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	include 'maledetti-apici-centro-include.php';
 
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-	
+
 	$my_calendario = unserialize ($_SESSION['my_calendario']); //deserializzazione dell'oggetto
 	$my_anagrafica = unserialize($_SESSION['my_anagrafica']);//deserializzazione 
 	$my_log = unserialize($_SESSION['my_log']);//deserializzazione 

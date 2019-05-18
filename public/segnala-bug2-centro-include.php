@@ -1,7 +1,7 @@
 <?php
 
-require('lib/phpmailer/PHPMailerAutoload.php');
-$mail = new PHPMailer();
+require('../core.php');
+$mail = new p();
 
 $annoprotocollo = $_SESSION['annoprotocollo'];
 $loginid= $_SESSION['loginid'];
@@ -21,7 +21,7 @@ $messaggio = 'Pagina: '.$_POST['pagina-errore'].' -- Errore: '.$_POST['messaggio
 	$mail->Subject = $oggetto;
 	$mail->Body    = $messaggio;
 	if(!$mail->send()) {
-		echo '<div class="alert alert-danger"><b><i class="fa fa-times"></i> Errore:</b> si è verificato un errore nell\'invio dell\'email.<br>'.$mail->ErrorInfo.'</div>';
+		echo '<div class="alert alert-danger"><b><i class="fa fa-times"></i> Errore:</b> si ï¿½ verificato un errore nell\'invio dell\'email.<br>'.$mail->ErrorInfo.'</div>';
 		echo '<a href="?corpus=home"><i class="fa fa-reply"></i> Torna alla home</a>';
 		$esito= 'FAILED';
 	} else {

@@ -62,7 +62,6 @@
 	$calendario = new Calendario();
 	
 	//LIBRERIA PER L'INVIO DI EMAIL
-	include('lib/phpmailer/PHPMailerAutoload.php');
 	$date = strftime("%d/%m/%Y");
 	$ora = date("g:i a");
 	$datamail = $date . ' alle ' . $ora;
@@ -189,7 +188,7 @@
 		}
 		
 		$pathqrcode = 'lettere'.$anno.'/qrcode/'.$id.$anno.'.png';
-		$param = 'Protocollo n° '.$id.' del '.$dataregistrazione;
+		$param = 'Protocollo nï¿½ '.$id.' del '.$dataregistrazione;
 		$codeText = $param; 
 		$debugLog = ob_get_contents(); 
 		QRcode::png($codeText, $pathqrcode);

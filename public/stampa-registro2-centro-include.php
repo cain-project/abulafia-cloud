@@ -1,12 +1,9 @@
 <?php
 error_reporting(~E_WARNING);
 session_start();
-function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-	require_once "class/" . $class_name.".obj.inc";
-}
+include '../core.php';
 $my_log = new Log();
 $lettera = new Lettera();
-include '../db-connessione-include.php';
 include 'maledetti-apici-centro-include.php';
 require('lib/fpdf/fpdf.php');
 	

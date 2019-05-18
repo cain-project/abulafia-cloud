@@ -1,6 +1,6 @@
 <?php
 
-require('lib/phpmailer/PHPMailerAutoload.php');
+use PHPMailer\PHPMailer\PHPMailer;
 $mail = new PHPMailer();
 
 $loginid= $_SESSION['loginid'];
@@ -18,7 +18,7 @@ $messaggio = $_POST['feedback'];
 	$mail->Subject = 'Feedback Abulafia';
 	$mail->Body = $messaggio;
 	if(!$mail->send()) {
-		echo '<div class="alert alert-danger"><b><i class="fa fa-times"></i> Errore:</b> si è verificato un errore nell\'invio del feedback.<br>'.$mail->ErrorInfo.'</div>';
+		echo '<div class="alert alert-danger"><b><i class="fa fa-times"></i> Errore:</b> si ï¿½ verificato un errore nell\'invio del feedback.<br>'.$mail->ErrorInfo.'</div>';
 		echo '<a href="?corpus=home"><i class="fa fa-reply"></i> Torna alla home</a>';
 		$esito= 'FAILED';
 	} else {

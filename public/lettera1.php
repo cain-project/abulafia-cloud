@@ -7,7 +7,7 @@
 	}
 
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	include 'class/Calendario.obj.inc';
 	
 	$calendario = new Calendario();

@@ -9,7 +9,7 @@
 	}
 	
 	$pathqrcode = 'lettere'.$anno.'/qrcode/'.$id.$anno.'.png';
-	$param = 'Protocollo n° '.$id.' anno '.$anno;
+	$param = 'Protocollo nï¿½ '.$id.' anno '.$anno;
 	$codeText = $param; 
 	$debugLog = ob_get_contents(); 
 	QRcode::png($codeText, $pathqrcode);
@@ -17,14 +17,9 @@
 
 <?php
 	session_start();
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'maledetti-apici-centro-include.php';
 	 
-
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-	
 	require_once('lib/fpdf/fpdf.php');
 	require_once('lib/fpdi/fpdi.php');
 	
@@ -67,7 +62,7 @@
 				$pdf->Write(0, 'Comitato Provinciale Catania');
 				$pdf->Ln(4);
 				$pdf->SetX(28);
-				$pdf->Write(0, 'Protocollo n° '.$id.' del '.$datareg);
+				$pdf->Write(0, 'Protocollo nï¿½ '.$id.' del '.$datareg);
 				$pdf->Image($pathqrcode, 1, 1);
 				
 	
@@ -96,7 +91,7 @@
 				$pdf->SetTextColor(0,0,0);
 				$pdf->Write(0, 'Croce Rossa Italiana - Comitato Provinciale Catania');
 				$pdf->Ln(4);
-				$pdf->Write(0, 'Protocollo n° '.$id.' del '.$datareg);
+				$pdf->Write(0, 'Protocollo nï¿½ '.$id.' del '.$datareg);
 				$pdf->Code39(11, 16, $id.' - '.$datareg);
 			}
 		}
