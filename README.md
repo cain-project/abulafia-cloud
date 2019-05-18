@@ -55,7 +55,7 @@ Questo creerà una cartella `vendor/`, la quale conterrà tutte le dipendenze di
 
 ### Prerequisiti
 
-Installa la utility a riga di comando (CLI) di Elastic Beanstalk.
+Installa la utility da riga di comando (CLI) di Elastic Beanstalk.
 Questo ti permetterà di lanciare i comandi che iniziano con `eb`.
 Segui le istruzioni ufficiali 
 [in questa pagina](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html),
