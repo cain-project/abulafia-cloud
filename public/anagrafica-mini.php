@@ -16,7 +16,7 @@
 	}
 
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 		
 	$id = $_GET['id'];
 	$risultati = $connessione->query("SELECT * FROM anagrafica WHERE idanagrafica = '$id'");

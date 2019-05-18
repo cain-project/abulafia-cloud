@@ -1,11 +1,7 @@
 <?php
 
 	session_start(); //avvio della sessione per caricare le variabili
-
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-
+    include '../core.php'; //connessione al db-server
 	include 'maledetti-apici-centro-include.php'; //ATTIVA O DISATTIVA IL MAGIC QUOTE PER GLI APICI
 	$my_calendario = new Calendario();//crea un nuovo oggetto
 	$_SESSION['my_calendario'] = serialize($my_calendario); //serializzazione per passaggio alle variabili di sessione
@@ -18,8 +14,7 @@
 	$usermd = md5($userid);
 	$password = md5($_POST['password']); // password inserita nella form della pagina iniziale
 
-	include '../db-connessione-include.php'; //connessione al db-server
-	
+
 	
 
 	$my_log = new Log(); //crea un nuovo oggetto 'log'

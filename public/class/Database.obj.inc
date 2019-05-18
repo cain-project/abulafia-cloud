@@ -1,6 +1,6 @@
 <?php
 
-require_once('../db-connessione-include.php');
+require_once('../core.php');
 
 class Database {
 

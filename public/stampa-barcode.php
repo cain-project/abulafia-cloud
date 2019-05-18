@@ -7,13 +7,10 @@
 		exit(); 
 	}
 	
-	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'lib/barcode/barcode.php';
-	require('class/Lettera.obj.inc');
-	require('class/Calendario.obj.inc');
-	require('lib/html2pdf/html2pdf.class.php');
-	
+	use \Spipu\Html2Pdf\Html2Pdf;
+
 	$id = $_GET['id'];
 	$anno = $_GET['anno'];
 

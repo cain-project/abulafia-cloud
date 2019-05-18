@@ -15,7 +15,7 @@
 		}
 
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 	include 'maledetti-apici-centro-include.php'; //ATTIVA O DISATTIVA IL MAGIC QUOTE PER GLI APICI
 
 	//passaggio variabili

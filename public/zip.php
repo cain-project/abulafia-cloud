@@ -9,7 +9,7 @@
 	}
 
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	include 'class/Lettera.obj.inc';
 
 	$id = $_GET['id'];

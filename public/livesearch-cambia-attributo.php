@@ -8,7 +8,7 @@
 	}
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php';
+	include '../core.php';
 
 	$idlettera = $_GET['idlettera'];
 	$idanagrafica = $_GET['idanagrafica'];

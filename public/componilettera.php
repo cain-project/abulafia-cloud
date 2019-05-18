@@ -6,9 +6,7 @@
 		exit(); 
 	}
 
-	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
-	include "class/Calendario.obj.inc";
+	include '../core.php'; //connessione al db-server
 	$immagine = "images/footerlettere.jpg";
 	$dimensioni = getimagesize($immagine);
 	$altezza = (($dimensioni[1] / 150) * 25.4) + 0.3;
@@ -45,7 +43,6 @@
 	if (($allegati == '') OR ($allegati == 0)) {
 		$allegati = '/';
 	}
-	require('lib/html2pdf/html2pdf.class.php');
 	$content = '
 	<page backtop="35mm" backbottom="' . $altezza . 'mm" backleft="10mm" backright="10mm">
 		
@@ -217,7 +214,8 @@
 		</span>
 	</page>';
 
-	$html2pdf = new HTML2PDF('P','A4','it');
+    use \Spipu\Html2Pdf\Html2Pdf;
+	$html2pdf = new Html2Pdf('P','A4','it');
 	$html2pdf->setDefaultFont("times");
 	$html2pdf->WriteHTML($content);
 

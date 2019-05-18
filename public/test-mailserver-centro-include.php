@@ -1,6 +1,7 @@
 <?php
 
-	require('lib/phpmailer/PHPMailerAutoload.php');
+    require("../core.php");
+    use PHPMailer\PHPMailer\PHPMailer;
 	$mail = new PHPMailer();
 	
 	include "../mail-conf-include.php";	

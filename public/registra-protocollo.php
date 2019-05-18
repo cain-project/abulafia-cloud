@@ -7,21 +7,17 @@
 		exit(); 
 	}
 	
-	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
-	
-	$id = $_GET['id'];
+	include '../core.php'; //connessione al db-server
+    use PHPMailer\PHPMailer\PHPMailer;
+
+    $id = $_GET['id'];
 	$idnext = $id;
 
 	//CREAZIONE NUOVI OGGETTI
-	include('class/Anagrafica.obj.inc');
-	include('class/Calendario.obj.inc');
 	$anagrafica = new Anagrafica();
 	$calendario = new Calendario();
 	$my_log = new Log();
 	
-	//LIBRERIA PER L'INVIO DI EMAIL
-	include('lib/phpmailer/PHPMailerAutoload.php');
 	$date=strftime("%d/%m/%Y");
 	$ora = date("g:i a");
 	$datamail = $date . ' alle ' . $ora;
@@ -122,7 +118,7 @@
 	}
 		
 	$pathqrcode = 'lettere'.$anno.'/qrcode/'.$id.$anno.'.png';
-	$param = 'Protocollo n° '.$id.' del '.$dataregistrazione;
+	$param = 'Protocollo nï¿½ '.$id.' del '.$dataregistrazione;
 	$codeText = $param; 
 	$debugLog = ob_get_contents(); 
 	QRcode::png($codeText, $pathqrcode);

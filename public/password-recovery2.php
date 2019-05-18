@@ -6,7 +6,8 @@
         header("Location: login0.php?corpus=home");
     }
 
-	require('lib/phpmailer/PHPMailerAutoload.php');
+	require("../core.php");
+    use PHPMailer\PHPMailer\PHPMailer;
 	$mail = new PHPMailer();
 
 	function random_string($length) {
@@ -18,15 +19,11 @@
 	    return $random_string;
 	}
 
-	function __autoload ($class_name) { //funzione predefinita che si occupa di caricare dinamicamente tutti gli oggetti esterni quando vengono richiamati
-		require_once "class/" . $class_name.".obj.inc";
-	}
-	
 	$cf = $_POST['codicefiscale']; // nome utente inserito nella form della pagina iniziale
 	$email = $_POST['email']; // password inserita nella form della pagina iniziale
 	
 	include 'class/Log.obj.inc';
-	include '../db-connessione-include.php'; //connessione al db-server
+	include '../core.php'; //connessione al db-server
 	include 'maledetti-apici-centro-include.php'; //ATTIVA O DISATTIVA IL MAGIC QUOTE PER GLI APICI
 
 	$settings3 = $connessione->query("SELECT distinct * from defaultsettings");

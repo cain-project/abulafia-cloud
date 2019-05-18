@@ -3,7 +3,7 @@
     session_start();
     
     include 'class/Log.obj.inc';
-    include '../db-connessione-include.php';
+    include '../core.php';
     include 'maledetti-apici-centro-include.php';
     
     if (isset($_SESSION['auth']) && $_SESSION['auth'] > 1 ) {
