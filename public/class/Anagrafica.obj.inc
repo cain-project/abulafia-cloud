@@ -411,7 +411,7 @@ class Anagrafica {
 
 		try {
 			$connessione->beginTransaction();
-			$query = $connessione->prepare("INSERT INTO aut_veicoli VALUES ('', :targa, :tipologa, :selettiva)");
+			$query = $connessione->prepare("INSERT INTO aut_veicoli VALUES ('', :targa, :tipologia, :selettiva)");
 			$query->bindParam(':targa', $targa);
 			$query->bindParam(':tipologia', $tipologia);
 			$query->bindParam(':selettiva', $selettiva);
