@@ -412,9 +412,9 @@ class Anagrafica {
 		try {
 			$connessione->beginTransaction();
 			$query = $connessione->prepare("INSERT INTO aut_veicoli VALUES ('0',:targa, :tipologia, :selettiva)");
-			$query->bindParam(':targa', $targa);
+			$query->bindParam(':targa', strtoupper($targa));
 			$query->bindParam(':tipologia', $tipologia);
-			$query->bindParam(':selettiva', $selettiva);
+			$query->bindParam(':selettiva', strtoupper($selettiva));
 			$query->execute();
 			$connessione->commit();
 			$q3 = true;
@@ -434,9 +434,9 @@ class Anagrafica {
 		try {
 			$connessione->beginTransaction();
 			$query = $connessione->prepare("UPDATE aut_veicoli SET targa = :targa, tipologia = :tipologia, selettiva = :selettiva WHERE id = :id");
-			$query->bindParam(':targa', $targa);
+			$query->bindParam(':targa', strtoupper($targa));
 			$query->bindParam(':tipologia', $tipologia);
-			$query->bindParam(':selettiva', $selettiva);
+			$query->bindParam(':selettiva', strtoupper($selettiva));
 			$query->bindParam(':id', $id);
 			$query->execute();
 			$connessione->commit();

@@ -54,7 +54,7 @@
 
 					<label class="col-sm-2 control-label">Selettiva radio:</label>
                     <div class="col-sm-2">
-                        <input type="text" value="<?php echo $info['selettiva']; ?>" class="form-control input-sm" minlength="5" maxlength="6" name="selettiva">
+                        <input type="text" value="<?php echo $info['selettiva']; ?>" class="form-control input-sm" minlength="7" maxlength="8" name="selettiva">
                     </div>
 
 				</div>
