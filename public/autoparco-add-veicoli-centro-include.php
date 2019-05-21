@@ -58,7 +58,7 @@ if( isset($_GET['insert']) && $_GET['insert'] == "error") {
 
                     <label class="col-sm-2 control-label">Selettiva radio:</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control input-sm" minlength="6" maxlength="8" name="selettiva">
+                        <input type="text" class="form-control input-sm" minlength="5" maxlength="6" name="selettiva">
                     </div>
 
                 </div>

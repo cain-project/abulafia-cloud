@@ -48,18 +48,18 @@ $query = $connessione->query("SELECT * FROM aut_veicoli WHERE targa LIKE '%$ogg%
             <td style="vertical-align: middle"><?php echo ucwords($risultati2['selettiva']);?></td>
             <td style="vertical-align: middle" align="center">
                 <div class="btn-group btn-group-sm">
-                    <a class="btn btn-info btn" data-toggle="tooltip" data-placement="left" title="Info Assistito" href="login0.php?corpus=cert-info-anag&id=<?php echo $risultati2['id']; ?> " data-toggle="modal" data-target="#myModal">
+                    <a class="btn btn-info btn" data-toggle="tooltip" data-placement="left" title="Info Veicolo" href="login0.php?corpus=cert-info-anag&id=<?php echo $risultati2['id']; ?> " data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-info-circle fa-fw"></i>
                     </a>
-                    <a class="btn btn-warning" data-toggle="tooltip" data-placement="left" title="Modifica Assistito" href="login0.php?corpus=cert-edit-anag&id=<?php echo $risultati2['id']; ?>">
+                    <a class="btn btn-warning" data-toggle="tooltip" data-placement="left" title="Modifica Veicolo" href="login0.php?corpus=autoparco-edit-veicoli&id=<?php echo $risultati2['id']; ?>">
                         <i class="fa fa-edit fa-fw"></i>
                     </a>
-                    <a class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Aggiungi Visita" href="login0.php?corpus=cert-modale-add-access&id=<?php echo $risultati2['id']; ?>" data-toggle="modal" data-target="#myModal">
+                    <?php /*<a class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Aggiungi Visita" href="login0.php?corpus=cert-modale-add-access&id=<?php echo $risultati2['id']; ?>" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-medkit fa-fw"></i>
-                    </a>
+                    </a> */ ?>
                     <?php if($a->isAdmin($_SESSION['loginid'])) {
                         ?>
-                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Assistito" onclick="return confirm('Sicuro di voler cancellare la persona?')" href="cert-delete-anag.php?id=<?php echo $risultati2['id']; ?>">
+                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare la persona?')" href="cert-delete-anag.php?id=<?php echo $risultati2['id']; ?>">
                             <i class="fa fa-trash-o fa-fw"></i>
                         </a>
                         <?php
