@@ -1,5 +1,10 @@
 <?php
 
+include 'class/Tipologia-veicolo.obj.inc';
+$t = new Tipologia_veicolo();
+
+$tipologie = $t->richiamaTipologie();
+
 if( isset($_GET['insert']) && $_GET['insert'] == "ok") {
     ?>
     <div class="row">
@@ -42,10 +47,13 @@ if( isset($_GET['insert']) && $_GET['insert'] == "error") {
                     <label class="col-sm-2 control-label">Tipologia:</label>
                     <div class="col-sm-3">
                         <select class="form-control input-sm" name="tipologia">
-                            <option selected value="Autovettura"> Autovettura</option>
-                            <OPTION value="Ambulanza"> Ambulanza</option>
-                            <OPTION value="Motoveicolo"> Motoveicolo</option>
-                            <OPTION value="Camion"> Camion</option>
+                            <?php
+                                foreach ( $tipologie as $rows )
+                                    {
+                                        $a = $rows['descrizione'];
+                                        echo "<option value=$a>$a</option>";
+                                    }
+                            ?>
                         </select>
                     </div>
 

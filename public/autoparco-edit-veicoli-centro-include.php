@@ -1,9 +1,14 @@
 <?php
+    include 'class/Tipologia-veicolo.obj.inc';
 
 	$id = $_GET['id'];
+
 	$a = new Anagrafica();
 	$c = new Calendario();
+    $t = new Tipologia_veicolo();
+
 	$info = $a->infoVeicolo($id);
+	$tipologie = $t->richiamaTipologie();
 
 	if( isset($_GET['edit']) && $_GET['edit'] == "ok") {
 		?>
@@ -39,10 +44,17 @@
                     <label class="col-sm-2 control-label">Tipologia:</label>
                     <div class="col-sm-3">
                         <select class="form-control input-sm" name="tipologia">
-                            <option value="Autovettura" <?php if($info['tipologia'] == 'Autovettura') echo 'selected'; ?> > Autovettura</option>
-                            <OPTION value="Ambulanza" <?php if($info['tipologia'] == 'Ambulanza') echo 'selected'; ?> > Ambulanza</option>
-                            <OPTION value="Motoveicolo" <?php if($info['tipologia'] == 'Motoveicolo') echo 'selected'; ?> > Motoveicolo</option>
-                            <OPTION value="Camion" <?php if($info['tipologia'] == 'Camion') echo 'selected'; ?> > Camion</option>
+                            <?php
+                                foreach ( $tipologie as $rows )
+                                {
+                                    $a = $rows['descrizione'];
+                                    $selezionato = '';
+                                    if ( $a === $info['tipologia'] ) {
+                                        $selezionato = 'selected';
+                                    }
+                                    echo '<option value="'.$a.'" '.$selezionato.' >'.$a.'</option>';
+                                }
+                            ?>
                         </select>
                     </div>
 

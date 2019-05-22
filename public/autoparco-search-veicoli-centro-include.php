@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <h3 class="panel-title"><strong><i class="fa fa-users"></i> Elenco Veicoli:</strong></h3>
+        <h3 class="panel-title"><strong><i class="fa fa-car"></i> Elenco Veicoli:</strong></h3>
     </div>
 
     <div class="panel-body">
