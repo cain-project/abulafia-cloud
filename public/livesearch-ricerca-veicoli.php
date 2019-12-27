@@ -48,7 +48,7 @@ $query = $connessione->query("SELECT * FROM aut_veicoli WHERE targa LIKE '%$ogg%
             <td style="vertical-align: middle"><?php echo ucwords($risultati2['selettiva']);?></td>
             <td style="vertical-align: middle" align="center">
                 <div class="btn-group btn-group-sm">
-                    <a class="btn btn-info btn" data-toggle="tooltip" data-placement="left" title="Info Veicolo" href="login0.php?corpus=cert-info-anag&id=<?php echo $risultati2['id']; ?> " data-toggle="modal" data-target="#myModal">
+                    <a class="btn btn-info btn" data-toggle="tooltip" data-placement="left" title="Visualizza Libretto" href="login0.php?corpus=autoparco-show-libretto&id=<?php echo $risultati2['id']; //convertire in visualizzazione+download ?> " data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-info-circle fa-fw"></i>
                     </a>
                     <a class="btn btn-warning" data-toggle="tooltip" data-placement="left" title="Modifica Veicolo" href="login0.php?corpus=autoparco-edit-veicoli&id=<?php echo $risultati2['id']; ?>">
@@ -59,7 +59,7 @@ $query = $connessione->query("SELECT * FROM aut_veicoli WHERE targa LIKE '%$ogg%
                     </a> */ ?>
                     <?php if($a->isAdmin($_SESSION['loginid'])) {
                         ?>
-                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare la persona?')" href="cert-delete-anag.php?id=<?php echo $risultati2['id']; ?>">
+                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare la persona?')" href="autoparco-delete-veicolo.php?id=<?php echo $risultati2['id']; ?>">
                             <i class="fa fa-trash-o fa-fw"></i>
                         </a>
                         <?php

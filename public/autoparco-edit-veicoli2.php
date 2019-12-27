@@ -15,7 +15,7 @@
         exit();
     }
 
-    $a = new Anagrafica();
+    $a = new Veicolo();
     $c = new Calendario();
 
 

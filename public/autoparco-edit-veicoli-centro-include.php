@@ -3,7 +3,7 @@
 
 	$id = $_GET['id'];
 
-	$a = new Anagrafica();
+	$a = new Veicolo();
 	$c = new Calendario();
     $t = new Tipologia_veicolo();
 
