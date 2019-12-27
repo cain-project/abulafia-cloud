@@ -43,7 +43,7 @@
         ?>
 
         <div align="left">
-            <a href="?corpus=autoparco-tipologie-add"><button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Aggiungi Servizio</button></a><br><br>
+            <a href="?corpus=autoparco-tipologie-add"><button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Aggiungi tipologia veicolo</button></a><br><br>
         </div>
 
         <script type="text/javascript" src="livesearch-autoparco-tipologie.js" onLoad="showResult('','25')"></script>

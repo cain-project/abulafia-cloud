@@ -56,8 +56,8 @@ if( isset($_GET['insert']) && $_GET['insert'] == "error") {
                             ?>
                         </select>
                     </div>
-
                 </div>
+
             </div>
 
 
@@ -69,7 +69,23 @@ if( isset($_GET['insert']) && $_GET['insert'] == "error") {
                         <input type="text" class="form-control input-sm" minlength="7" maxlength="8" name="selettiva">
                     </div>
 
+
+                    <label class="col-sm-2 control-label"> Carica libretto</label>
+                    <div class="col-sm-3">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $_SESSION['protocollomaxfilesize'];?>" />
+                            <label for="exampleInputFile"> <i class="fa fa-upload"></i> Carica libretto:</label>
+                            <small>&egrave; possibile scegliere pi&ugrave; file alla volta;</small>
+                            <input required id="uploadedfile" name="uploadedfile[]" type="file" multiple="multiple" class="filestyle" data-buttonBefore="true" data-placeholder="nessun file selezionato.">
+                            <br>
+                            <button id="buttonload" onclick="showbar();" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Caricamento in corso...attendere!" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-paperclip"></span> Allega File </button>
+                            <br><br>
+                            <div class="progress" id="progress" style="display: none;">
+                                <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                            </div>
+                    </div>
+
                 </div>
+
             </div>
 
             <br>
@@ -79,7 +95,50 @@ if( isset($_GET['insert']) && $_GET['insert'] == "error") {
                 </center>
             </div>
 
+
         </form>
 
     </div>
 </div>
+
+<script>
+    $("#buttonl").click(function() {
+        var $btn = $(this);
+        var oggetto = document.modulo.oggetto.value;
+        if ((oggetto == "") || (oggetto == "undefined")) {
+            return false;
+        }
+        else {
+            $btn.button('loading');
+        }
+    });
+
+    $("#buttonload").click(function() {
+        var $btn = $(this);
+        if(document.getElementById("uploadedfile").value != '') {
+            $btn.button('loading');
+        }
+    });
+</script>
+
+<script language="javascript">
+
+    <!--
+    function showbar() {
+        if(document.getElementById("uploadedfile").value != '') {
+            document.getElementById("progress").style.display="block";
+        }
+    }
+
+
+    function loading()
+
+    {
+        if(document.getElementById("exampleInputFile").value != '') {
+            document.getElementById("content").style.display="table";
+        }
+    }
+
+
+    //-->
+</script>
