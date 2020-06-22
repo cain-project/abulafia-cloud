@@ -59,7 +59,7 @@ $query = $connessione->query("SELECT * FROM aut_veicoli WHERE targa LIKE '%$ogg%
                     </a> */ ?>
                     <?php if($a->isAdmin($_SESSION['loginid'])) {
                         ?>
-                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare la persona?')" href="autoparco-delete-veicolo.php?id=<?php echo $risultati2['id']; ?>">
+                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare il veicolo?')" href="autoparco-delete-veicolo.php?id=<?php echo $risultati2['id']; ?>">
                             <i class="fa fa-trash-o fa-fw"></i>
                         </a>
                         <?php
