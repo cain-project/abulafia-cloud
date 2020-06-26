@@ -50,15 +50,15 @@ $query = $connessione->query("SELECT * FROM anagrafica WHERE autorizzato is true
             <td style="vertical-align: middle">
                 <?php $anag = new Anagrafica(); $cell = $anag->getCellulare($risultati2['idanagrafica']); echo $cell; //implementare il multinumero ?>
             </td>
-            <?php if($a->isRespco($_SESSION['loginid']) || $a->isAdmin($_SESSION['loginid']) ){ ?> <td style="vertical-align: middle" align="center">
-                <div class="btn-group btn-group-sm">
-                 <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Revoca autorizzazione" onclick="return confirm('Sicuro di voler revocare autorizzazione al volontario?')" href="co-volontari-revoca.php?id=<?php echo $risultati2['idanagrafica']; ?>">
-                        <i class="fa fa-trash-o fa-fw"></i>
-                    </a>
-
-                </div>
+            <?php if($a->isRespco($_SESSION['loginid']) || $a->isAdmin($_SESSION['loginid']) ){ ?>
+                <td style="vertical-align: middle" align="center">
+                    <div class="btn-group btn-group-sm">
+                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Revoca autorizzazione" onclick="return confirm('Sicuro di voler revocare autorizzazione al volontario?')" href="co-volontari-revoca.php?id=<?php echo $risultati2['idanagrafica']; ?>">
+                            <i class="fa fa-trash-o fa-fw"></i>
+                        </a>
+                    </div>
+                </td>
             <?php } ?>
-            </td>
         </tr>
         <?php
     }

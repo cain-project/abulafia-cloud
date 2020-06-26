@@ -6,25 +6,23 @@
 
     <div class="panel-body">
 
-        <?php /*
-        if (isset($_GET['inserimento']) &&($_GET['inserimento'] == 'ok')) {
-            ?>
-            <center><div class="alert alert-success"><i class="fa fa-check"></i> Visita inserita <b>correttamente!</b></div></center>
-            <?php
-        } */
+        <?php
+
+        $a = new Anagrafica();
 
         if (isset($_GET['delete']) &&($_GET['delete'] == 'ok')) {
             ?>
             <center><div class="alert alert-success"><i class="fa fa-trash"></i> Autorizzazione volontario rimossa <b>correttamente!</b></div></center>
             <?php
-        }/*
-
-        if (isset($_GET['richiesta']) &&($_GET['richiesta'] == 'ok')) {
-            ?>
-            <center><div class="alert alert-success"><i class="fa fa-check"></i> Richiesta di certificato medico inoltrata <b>correttamente!</b></div></center>
-            <?php
         }
-        */?>
+
+        if ($a->isRespco($_SESSION['loginid']) || $a->isAdmin($_SESSION['loginid'])){ ?>
+
+            <div align="right">
+                <a href="?corpus=magazzino-aggiungi-prodotto"><button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Aggiungi autorizzato</button></a><br><br>
+            </div>
+
+        <?php } ?>
 
         <script type="text/javascript" src="livesearch-co-volontari.js" onLoad="showResult('','25')"></script>
         <form name="cercato" onSubmit="return false">
