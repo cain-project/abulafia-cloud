@@ -425,6 +425,53 @@ class Anagrafica {
 		return $nome;
 	}
 
+	public function revocaAutorizzazione($id) {
+
+		global $connessione;
+		$autorizzato = 0;
+
+		try {
+			$connessione->beginTransaction();
+			$query = $connessione->prepare("UPDATE anagrafica SET autorizzato = :autorizzato WHERE idanagrafica = :idanagrafica");
+			$query->bindParam(':autorizzato', $autorizzato);
+			$query->bindParam(':idanagrafica', $id);
+			$query->execute();
+			$connessione->commit();
+			$q3 = true;
+		}
+		catch (PDOException $errorePDO) {
+			echo "Errore: " . $errorePDO->getMessage();
+			$connessione->rollBack();
+			$q3 = false;
+		}
+
+		return $q3;
+	}
+
+	public function getCellulare($id) {
+		global $connessione;
+		$risultati2 = $connessione->query("SELECT * FROM jointelefonipersone WHERE idanagrafica = '$id'");
+		$countrecapiti = $connessione->query("SELECT COUNT(*) FROM jointelefonipersone WHERE idanagrafica = '$id'");
+		$cr = $countrecapiti->fetch();
+
+		if ($cr[0] > 0) {
+			$row2 = $risultati2->fetch();
+			while ($cell = $row2)
+			{
+				if ($cell['tipo'] = 'mobile')
+				{
+					return $cell['numero'];
+				}
+			}
+
+		}
+		else
+		{
+			return null;
+		}
+
+	}
+
 }
 
 ?>

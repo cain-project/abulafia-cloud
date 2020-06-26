@@ -19,7 +19,7 @@ $c = new Calendario();
 $ogg = $_GET['q'];
 $num = $_GET['num'];
 
-$query = $connessione->query("SELECT * FROM anagrafica WHERE autorizzato IS TRUE AND nome LIKE '%$ogg%' OR cognome LIKE '%$ogg%' OR codicefiscale LIKE '%$ogg%' ORDER BY cognome DESC LIMIT $num");
+$query = $connessione->query("SELECT * FROM anagrafica WHERE autorizzato is true  AND (nome LIKE '%$ogg%' OR cognome LIKE '%$ogg%' OR codicefiscale LIKE '%$ogg%' ) ORDER BY cognome DESC LIMIT $num");
 ?>
 
 <table class="table table-bordered">
@@ -27,7 +27,8 @@ $query = $connessione->query("SELECT * FROM anagrafica WHERE autorizzato IS TRUE
         <td><b>Nome</b></td>
         <td><b>Cognome</b></td>
         <td><b>Codice Fiscale</b></td>
-        <td align="center"><b>Opzioni</b></td>
+        <td><b>Cellulare</b></td>
+        <?php if($a->isRespco($_SESSION['loginid'])){ ?> <td align="center"><b>Opzioni</b></td> <?php } ?>
     </tr>
 
     <?php
@@ -46,26 +47,17 @@ $query = $connessione->query("SELECT * FROM anagrafica WHERE autorizzato IS TRUE
             <td style="vertical-align: middle"><?php echo ucwords($risultati2['nome']);?></td>
             <td style="vertical-align: middle"><?php echo ucwords($risultati2['cognome']);?></td>
             <td style="vertical-align: middle"><?php echo ucwords($risultati2['codicefiscale']);?></td>
-            <td style="vertical-align: middle" align="center">
+            <td style="vertical-align: middle">
+                <?php $anag = new Anagrafica(); $cell = $anag->getCellulare($risultati2['idanagrafica']); echo $cell; //implementare il multinumero ?>
+            </td>
+            <?php if($a->isRespco($_SESSION['loginid']) || $a->isAdmin($_SESSION['loginid']) ){ ?> <td style="vertical-align: middle" align="center">
                 <div class="btn-group btn-group-sm">
-                    <a class="btn btn-info btn" data-toggle="tooltip" data-placement="left" title="Visualizza Libretto" href="login0.php?corpus=autoparco-show-libretto&id=<?php echo $risultati2['id']; //convertire in visualizzazione+download ?> " data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-info-circle fa-fw"></i>
+                 <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Revoca autorizzazione" onclick="return confirm('Sicuro di voler revocare autorizzazione al volontario?')" href="co-volontari-revoca.php?id=<?php echo $risultati2['idanagrafica']; ?>">
+                        <i class="fa fa-trash-o fa-fw"></i>
                     </a>
-                    <a class="btn btn-warning" data-toggle="tooltip" data-placement="left" title="Modifica Veicolo" href="login0.php?corpus=autoparco-edit-veicoli&id=<?php echo $risultati2['id']; ?>">
-                        <i class="fa fa-edit fa-fw"></i>
-                    </a>
-                    <?php /*<a class="btn btn-success" data-toggle="tooltip" data-placement="left" title="Aggiungi Visita" href="login0.php?corpus=cert-modale-add-access&id=<?php echo $risultati2['id']; ?>" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-medkit fa-fw"></i>
-                    </a> */ ?>
-                    <?php if($a->isAdmin($_SESSION['loginid'])) {
-                        ?>
-                        <a class="btn btn-danger" data-toggle="tooltip" data-placement="left" title="Elimina Veicolo" onclick="return confirm('Sicuro di voler cancellare il veicolo?')" href="autoparco-delete-veicolo.php?id=<?php echo $risultati2['id']; ?>">
-                            <i class="fa fa-trash-o fa-fw"></i>
-                        </a>
-                        <?php
-                    }
-                    ?>
+
                 </div>
+            <?php } ?>
             </td>
         </tr>
         <?php

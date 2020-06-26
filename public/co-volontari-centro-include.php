@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <h3 class="panel-title"><strong><i class="fa fa-user-circle"></i> Volontari autorizzati:</strong></h3>
+        <h3 class="panel-title"><strong><i class="fa fa-user-circle"></i> Volontari autorizzati</strong></h3>
     </div>
 
     <div class="panel-body">
@@ -15,7 +15,7 @@
 
         if (isset($_GET['delete']) &&($_GET['delete'] == 'ok')) {
             ?>
-            <center><div class="alert alert-success"><i class="fa fa-trash"></i> Veicolo eliminato <b>correttamente!</b></div></center>
+            <center><div class="alert alert-success"><i class="fa fa-trash"></i> Autorizzazione volontario rimossa <b>correttamente!</b></div></center>
             <?php
         }/*
 
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class="input-group">
-                        <div class="input-group-addon"><i class="fa fa-search"></i></div><input placeholder="digita la targa, la tipologia di veicolo o la selettiva radio" type="text" name="valore" class="form-control" onkeyup="showResult(this.value,numero.value)">
+                        <div class="input-group-addon"><i class="fa fa-search"></i></div><input placeholder="digita il nome, il cognome o il codice fiscale" type="text" name="valore" class="form-control" onkeyup="showResult(this.value,numero.value)">
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -55,4 +55,3 @@
 
     </div>
 </div>
-<?php
