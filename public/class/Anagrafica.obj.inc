@@ -211,6 +211,26 @@ class Anagrafica {
 			return false;
 	}
 
+	public function isOpco($id) { //operatore di centrale
+		global $connessione;
+		$query = $connessione->query("SELECT opco FROM users WHERE idanagrafica = $id");
+		$autoparco = $query->fetch();
+		if ($autoparco[0] == 1)
+			return true;
+		else
+			return false;
+	}
+
+	public function isRespco($id) { //responsabile di centrale
+		global $connessione;
+		$query = $connessione->query("SELECT respco FROM users WHERE idanagrafica = $id");
+		$autoparco = $query->fetch();
+		if ($autoparco[0] == 1)
+			return true;
+		else
+			return false;
+	}
+
 	public function isContabilita($id) {
 		global $connessione;
 		$query = $connessione->query("SELECT contabilita FROM users WHERE idanagrafica = $id");

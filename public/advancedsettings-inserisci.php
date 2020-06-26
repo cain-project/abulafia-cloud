@@ -82,6 +82,13 @@
         $autoparco = 0;
     }
 
+    if(isset($_POST['co'])) {
+        $co = 1;
+    }
+    else {
+        $co = 0;
+    }
+
 	if(isset($_POST['contabilita'])) {
 		$contabilita = 1;
 	}
@@ -149,6 +156,7 @@
 				defaultsettings.magazzino = :magazzino, 
 				defaultsettings.ambulatorio = :ambulatorio,
 				defaultsettings.autoparco = :autoparco, 
+				defaultsettings.co = :co,
 				defaultsettings.contabilita = :contabilita");
 
 		$query->bindParam(':version', $version);
@@ -171,6 +179,7 @@
 		$query->bindParam(':magazzino', $magazzino);
 		$query->bindParam(':ambulatorio', $ambulatorio);
         $query->bindParam(':autoparco', $autoparco);
+        $query->bindParam(':co', $co);
 		$query->bindParam(':contabilita', $contabilita);
 		$query->execute();
 		$connessione->commit();
@@ -201,6 +210,7 @@
 	$_SESSION['mod_magazzino'] = $magazzino;
 	$_SESSION['mod_ambulatorio'] = $ambulatorio;
     $_SESSION['mod_autoparco'] = $autoparco;
+    $_SESSION['mod_co'] = $co;
 	$_SESSION['mod_contabilita'] = $contabilita;
 
 ?>

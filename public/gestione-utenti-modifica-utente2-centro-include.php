@@ -63,6 +63,20 @@
         $autoparco = 0;
     }
 
+    if(isset($_POST['opco'])) {
+        $opco = $_POST['opco'];
+    }
+    else {
+        $opco = 0;
+    }
+
+    if(isset($_POST['respco'])) {
+        $respco = $_POST['respco'];
+    }
+    else {
+        $respco = 0;
+    }
+
 	if(isset($_POST['contabilita'])) {
 		$contabilita = $_POST['contabilita'];
 	}
@@ -101,7 +115,7 @@
 
 	try {
 	   	$connessione->beginTransaction();
-		$query = $connessione->prepare("UPDATE users SET users.loginname = :nomeutente, users.mainemail = :email, users.auth = :authlevel, users.admin = :admin, users.anagrafica = :anagrafica, users.protocollo = :protocollo, users.documenti = :documenti, users.lettere = :lettere, users.magazzino = :magazzino, users.ambulatorio = :ambulatorio, users.autoparco = :autoparco, users.contabilita = :contabilita, users.updateprofile = :check WHERE users.idanagrafica = :id LIMIT 1");
+		$query = $connessione->prepare("UPDATE users SET users.loginname = :nomeutente, users.mainemail = :email, users.auth = :authlevel, users.admin = :admin, users.anagrafica = :anagrafica, users.protocollo = :protocollo, users.documenti = :documenti, users.lettere = :lettere, users.magazzino = :magazzino, users.ambulatorio = :ambulatorio, users.autoparco = :autoparco, users.opco = :opco, users.respco = :respco, users.contabilita = :contabilita, users.updateprofile = :check WHERE users.idanagrafica = :id LIMIT 1");
 		$query->bindParam(':nomeutente', $nomeutente);
 		$query->bindParam(':email', $email);
 		$query->bindParam(':authlevel', $authlevel);
@@ -113,6 +127,8 @@
 		$query->bindParam(':magazzino', $magazzino);
 		$query->bindParam(':ambulatorio', $ambulatorio);
         $query->bindParam(':autoparco', $autoparco);
+        $query->bindParam(':opco', $opco);
+        $query->bindParam(':respco', $respco);
 		$query->bindParam(':contabilita', $contabilita);
 		$query->bindParam(':check', $check);
 		$query->bindParam(':id', $id);

@@ -59,6 +59,8 @@
 							<td align="center"><b>Magazzino</b></td>
 							<td align="center"><b>Ambulatorio</b></td>
                             <td align="center"><b>Autoparco</b></td>
+                            <td align="center"><b>Op CO</b></td>
+                            <td align="center"><b>Resp CO</b></td>
 							<td align="center"><b>Contabilit&agrave</b></td>
 							<td align="center"><b>Profile</b></td>
 							<?php if($anag->isAdmin($_SESSION['loginid'])) { ?><td align="center"><b>Opzioni</b></td><?php } ?>
@@ -80,6 +82,8 @@
 								<td align="center"><?php if($risultati2['magazzino'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
 								<td align="center"><?php if($risultati2['ambulatorio'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
                                 <td align="center"><?php if($risultati2['autoparco'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
+                                <td align="center"><?php if($risultati2['opco'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
+                                <td align="center"><?php if($risultati2['respco'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
 								<td align="center"><?php if($risultati2['contabilita'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
 								<td align="center"><?php if($risultati2['updateprofile'] == 1) { echo '<i class="fa fa-check text-success"></i>'; } else { echo '<i class="fa fa-close text-danger"></i>'; }?></td>
 								<?php if($anag->isAdmin($_SESSION['loginid'])) { ?>

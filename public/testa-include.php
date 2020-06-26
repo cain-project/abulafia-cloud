@@ -416,6 +416,16 @@ tinymce.init({
                         </li>
                     <?php } ?>
 
+                    <?php if($_SESSION['mod_co'] && ($anag->isOpco($_SESSION['loginid']) || $anag->isRespco($_SESSION['loginid']))) { ?>
+                        <li class="dropdown <?php if($_GET['corpus'] == 'cert' OR $_GET['corpus']=='cert-anag') { echo ' active'; }?>">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-laptop fa-fw"></i> CO <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="?corpus=co-volontari"><i class="fa fa-user-circle fa-fw"></i> Volontari</a></li>
+                                <li><a href="?corpus=autoparco-add-veicoli"><i class="fa fa-database fa-fw"></i> Richieste</a></li>
+                            </ul>
+                        </li>
+                    <?php } ?>
+
 				</ul>
 		   
 				<ul class="nav navbar-nav navbar-right">

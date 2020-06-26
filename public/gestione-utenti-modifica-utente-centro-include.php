@@ -112,6 +112,16 @@
                             <input type="checkbox" name="autoparco" value="1" <?php if($row3['autoparco'] == 1) echo 'checked'; ?>/></center>
                     </div>
 
+                    <div class="col-sm-1">
+                        <center><label>Op CO:</label><br>
+                            <input type="checkbox" name="opco" value="1" <?php if($row3['opco'] == 1) echo 'checked'; ?>/></center>
+                    </div>
+
+                    <div class="col-sm-1">
+                        <center><label>Resp CO:</label><br>
+                            <input type="checkbox" name="respco" value="1" <?php if($row3['respco'] == 1) echo 'checked'; ?>/></center>
+                    </div>
+
 					<div class="col-sm-1">
 						<center><label>Contabilit&agrave:</label><br>
 						<input type="checkbox" name="contabilita" value="1" <?php if($row3['contabilita'] == 1) echo 'checked'; ?>/></center>

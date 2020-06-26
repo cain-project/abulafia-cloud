@@ -198,6 +198,10 @@
                             <td><label>Autoparco </label></td><td><input type="checkbox" name="autoparco" <?php if($_SESSION['mod_autoparco']) echo 'checked'; ?>
                                     <?php if(!$admin) { echo 'disabled'; } ?> > </td>
                         </tr>
+                        <tr>
+                            <td><label>CO</label></td><td><input type="checkbox" name="co" <?php if($_SESSION['mod_co']) echo 'checked'; ?>
+                                    <?php if(!$admin) { echo 'disabled'; } ?> > </td>
+                        </tr>
 						<tr>
 							<td><label>Contabilita' </label></td><td><input type="checkbox" name="contabilita" <?php if($_SESSION['mod_contabilita']) echo 'checked'; ?>
 							<?php if(!$admin) { echo 'disabled'; } ?> > </td>
